@@ -23,7 +23,7 @@ def get_serializer(format):
     else:
         raise ValueError(format)
 
-# Product components
+# Product component 1 (JSON)
 def _serialize_to_json(song):
     payload = {
         'id': song.song_id,
@@ -32,6 +32,7 @@ def _serialize_to_json(song):
     }
     return json.dumps(payload)
 
+# Product component 2 (XML)
 def _serialize_to_xml(song):
     song_info = et.Element('song', attrib={'id': song.song_id})
         
